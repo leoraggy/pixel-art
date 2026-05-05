@@ -22,7 +22,14 @@ function App() {
 
     setGrid(next);
   };
-
+  <label className="pixel-tools">
+  Color
+  <input
+    type="color"
+    value={paint}
+    onChange={e => paint(e.target.value)}
+  />
+</label>
   return (
     <>
       <div className="pixel-art">
