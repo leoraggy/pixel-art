@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import { rainbowColors } from "./data";
+import ColorPallete from "./components/ColorPallete";
 function App() {
   const defaultColor = "#ffffff";
   const defaultSize = 16;
@@ -22,19 +24,25 @@ function App() {
 
     setGrid(next);
   };
-  <label className="pixel-tools">
-  Color
-  <input
-    type="color"
-    value={paint}
-    onChange={e => paint(e.target.value)}
-  />
-</label>
+
+  const changeColor = (color) => {
+    setColor(color);
+  };
+
   return (
     <>
       <div className="pixel-art">
         <h1>Pixel Art Editor</h1>
+        <label className="pixel-tools">
+          Color
+          <input
+            type="color"
+            value={color}
+            onChange={(e) => setColor(e.target.value)}
+          />
+        </label>
 
+        <ColorPallete changeColor={changeColor} />
         <div
           className="pixel-grid"
           style={{ gridTemplateColumns: `repeat(${defaultSize}, 1fr)` }}
