@@ -6,6 +6,18 @@ function App() {
 
   const [grid, setGrid] = useState(createGrid);
   const [color, setColor] = useState(defaultColor);
+  
+   {grid.map((row, r) =>
+        row.map((color, c) => (
+          <button
+            key={`${r}-${c}`}  className="pixel"
+            style={{ background: color }} aria-label={`Pixel ${r}, ${c}`}
+          />
+          ))
+      )}
+
+
+
 
   const createGrid = () => {
     const newGrid = Array.from({ length: defaultSize }, () =>
