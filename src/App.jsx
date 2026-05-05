@@ -28,6 +28,9 @@ function App() {
   const changeColor = (color) => {
     setColor(color);
   };
+  const clearGrid = () =>  {
+          setGrid(clearGrid());
+  }
 
   return (
     <>
@@ -43,6 +46,8 @@ function App() {
         </label>
 
         <ColorPallete changeColor={changeColor} />
+        <button className="clear-btn" onClick={clearGrid}>Clear</button>
+
         <div
           className="pixel-grid"
           style={{ gridTemplateColumns: `repeat(${defaultSize}, 1fr)` }}
