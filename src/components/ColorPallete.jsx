@@ -6,7 +6,7 @@ function ColorPallete({ changeColor }) {
       {rainbowColors.map((color, index) => (
         <button
           key={index}
-          onClick={() => changeColor(color)}
+          onClick={changeColor(color)}
           style={{
             background: color,
             width: "20px",
