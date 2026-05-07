@@ -26,7 +26,7 @@ function App() {
     setGrid(next);
   };
 
-  const changeColor = (color) => {
+  const changeColor = () => {
     setColor(color);
   };
   const clearGrid = () => {
@@ -46,7 +46,7 @@ function App() {
           />
         </label>
 
-        <ColorPallete changeColor={changeColor} />
+        <ColorPallete changeColor={color} />
         <button className="clear-btn" onClick={clearGrid}>
           Clear
         </button>
