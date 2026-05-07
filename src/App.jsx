@@ -46,7 +46,7 @@ function App() {
           />
         </label>
 
-        <ColorPallete changeColor={color} />
+        <ColorPallete changeColor={changeColor} />
         <button className="clear-btn" onClick={clearGrid}>
           Clear
         </button>
@@ -55,10 +55,10 @@ function App() {
           className="pixel-grid"
           style={{ gridTemplateColumns: `repeat(${defaultSize}, 1fr)` }}
         >
-          {grid.map((row, r) =>
+          {grid.map((row, r, index) =>
             row.map((color, c) => (
               <button
-                key={`${r}-${c}`}
+                key={index}
                 className="pixel"
                 style={{ background: color }}
                 aria-label={`Pixel ${r}, ${c}`}
