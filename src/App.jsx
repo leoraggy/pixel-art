@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { rainbowColors } from "./data";
 import ColorPallete from "./components/ColorPallete";
+
 function App() {
   const defaultColor = "#ffffff";
   const defaultSize = 16;
@@ -28,9 +29,9 @@ function App() {
   const changeColor = (color) => {
     setColor(color);
   };
-  const clearGrid = () =>  {
-          setGrid(clearGrid());
-  }
+  const clearGrid = () => {
+    setGrid(createGrid);
+  };
 
   return (
     <>
@@ -46,7 +47,9 @@ function App() {
         </label>
 
         <ColorPallete changeColor={changeColor} />
-        <button className="clear-btn" onClick={clearGrid}>Clear</button>
+        <button className="clear-btn" onClick={clearGrid}>
+          Clear
+        </button>
 
         <div
           className="pixel-grid"
